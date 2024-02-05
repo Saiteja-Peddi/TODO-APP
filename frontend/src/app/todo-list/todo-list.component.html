@@ -1,0 +1,28 @@
+<mat-card class="todo-form-card">
+  <mat-card-content>
+    <div
+      *ngFor="let task of todoList; let i = index; trackBy: trackByItems"
+      class="task-list-item"
+    >
+      <div class="text-field">
+        <mat-checkbox
+          color="primary"
+          [checked]="task.completed"
+          (change)="checkBoxClicked(i)"
+        >
+          <span [ngClass]="{ 'strike-through': task.completed }">{{
+            task.value
+          }}</span>
+        </mat-checkbox>
+      </div>
+      <div class="icons">
+        <button mat-icon-button (click)="editTask(task)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteTask(task)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,22 @@
+<form [formGroup]="todoForm">
+  <mat-card class="todo-form-card">
+    <mat-card-header>
+      <mat-card-title>Todo List Manager</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Task</mat-label>
+        <input formControlName="task" matInput />
+        <mat-error
+          *ngIf="
+            todoForm.get('task')?.invalid &&
+            (todoForm.get('task')?.dirty || todoForm.get('task')?.touched)
+          "
+        >
+          {{ getErrorMessage("task") }}
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button class="submit-button">Add to list</button>
+    </mat-card-content>
+  </mat-card>
+</form>

@@ -1,1 +1,135 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+.header {
+  height: 4rem;
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  background: linear-gradient(145deg, #263238, #78909c);
+}
+
+.title {
+  font-size: 2rem;
+  color: white;
+  padding: 0rem 2rem;
+  display: block;
+  width: fit-content;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #303030;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+mat-card {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-card-header,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+mat-form-field {
+  width: 100%;
+  font-size: 1rem;
+}
+mat-card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 10px !important;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+}
+.todo-form-card {
+  margin-top: 4rem;
+  border-radius: 0.5rem !important;
+  width: 80%;
+  margin-left: 7%;
+}
+
+.imp-field {
+  color: red;
+}
+
+.task-list-item {
+  border-bottom: solid black;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-list-item .text-field {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: black;
+}
+
+.task-list-item .icon {
+  margin-right: 10px;
+  color: black;
+  font-size: 1rem;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+.edit-task-card {
+  margin: 0%;
+}
+
+.dialog-cancel-button {
+  width: 46%;
+  margin: 2% !important;
+  font-size: 1rem;
+}
+
+.dialog-submit-button {
+  width: 46%;
+  margin: 2% !important;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+}
+.dialog-input-field {
+  width: 100%;
+}
+.dialog-container {
+  width: 30rem;
+  max-height: 30rem;
+  border-radius: 2rem;
+}
+mat-dialog-container {
+  padding: 0% !important;
+}
