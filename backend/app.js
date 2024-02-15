@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const tasksRouter = require("./routes/tasks");
 const { connectToDB } = require("./db/connect");
+const notFound = require("./middleware/not-found");
+const errorHandlerMiddleware = require("./middleware/error-handler");
 
 // dotenv is used to access variables in .env file.
 // In this case we are storing values that we don't want to push to the cloud repo.
@@ -15,7 +17,8 @@ app.use(express.static("./public"));
 
 // Routes
 app.use("/api/v1/tasks", tasksRouter);
-
+app.use(notFound);
+app.use(errorHandlerMiddleware);
 const port = 3000;
 
 /*
