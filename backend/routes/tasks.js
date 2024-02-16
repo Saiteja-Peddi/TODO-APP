@@ -10,6 +10,7 @@ const {
 } = require("../controllers/tasks-async-wrapper");
 
 // Use "../controllers/tasks-async-wrapper" path above to test async-warapper functionality.
+// Use "../controllers/tasks" path above to test normal functionality.
 
 // Always define more specific routes before more general or parameterized routes to avoid conflicts.
 router.route("/").get(getAllTasks).post(createTask);

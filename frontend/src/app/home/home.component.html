@@ -1,6 +1,9 @@
 <div class="container">
   <div>
-    <app-todo-form></app-todo-form>
+    <app-todo-form (reloadTasks)="reloadTasks($event)"></app-todo-form>
   </div>
   <div><app-todo-list></app-todo-list></div>
+</div>
+<div *ngIf="loadingService.loading$ | async" class="spinner-overlay">
+  <mat-spinner [diameter]="50"></mat-spinner>
 </div>

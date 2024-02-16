@@ -1,0 +1,19 @@
+<mat-card class="popup-msg-card">
+  <mat-card-content class="popup-msg-mat-card">
+    <div>
+      <mat-icon color="warn" class="popup-msg-icon"> error </mat-icon>
+    </div>
+    <div class="popup-msg-text">
+      {{ errorMessage }}
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      (click)="closeDialog()"
+      class="dialog-okay-button"
+    >
+      Okay
+    </button>
+  </mat-card-actions>
+</mat-card>

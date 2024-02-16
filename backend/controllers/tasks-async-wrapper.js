@@ -29,9 +29,9 @@ const getTaskByID = asyncWrapper(async (req, res, next) => {
     // Example to use custom error handling
     return next(
       createCustomApiError(
-        200,
+        400,
         JSON.stringify({
-          success: true,
+          success: false,
           message: "Task not found.",
         })
       )
@@ -46,7 +46,7 @@ const updateTask = asyncWrapper(async (req, res) => {
     new: true,
   });
   if (!task) {
-    return res.status(200).json({ success: true, message: "Task not found." });
+    return res.status(400).json({ success: false, message: "Task not found." });
   }
   res.status(200).json({ success: true, message: "Updated task", task: task });
 });
@@ -59,7 +59,7 @@ const deleteTask = asyncWrapper(async (req, res) => {
     { new: true }
   );
   if (!task) {
-    return res.status(200).json({ success: true, message: "Task not found." });
+    return res.status(400).json({ success: false, message: "Task not found." });
   }
   res.status(200).json({ success: true, message: "Deleted task", task: task });
 });
