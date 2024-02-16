@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { NewTask } from '../../interface';
 import { TasksHttpService } from '../../services/tasks-http.service';
@@ -10,7 +10,7 @@ import { PopupMsgComponent } from '../popup-msg/popup-msg.component';
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.css'],
 })
-export class TodoFormComponent implements OnInit {
+export class TodoFormComponent {
   @Output() reloadTasks = new EventEmitter<boolean>();
 
   todoForm: FormGroup = this.fb.group({
@@ -25,8 +25,6 @@ export class TodoFormComponent implements OnInit {
     private taskHttp: TasksHttpService,
     private dialog: MatDialog
   ) {}
-
-  ngOnInit(): void {}
 
   addTask() {
     if (this.todoForm.valid) {

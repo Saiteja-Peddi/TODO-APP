@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoaderService } from '../shared/services/loader.service';
 import { TodoListComponent } from '../shared/components/todo-list/todo-list.component';
@@ -7,7 +7,7 @@ import { TodoListComponent } from '../shared/components/todo-list/todo-list.comp
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   @ViewChild(TodoListComponent) todoListComponent!: TodoListComponent;
 
   todoForm: FormGroup = this.fb.group({
@@ -20,8 +20,6 @@ export class HomeComponent implements OnInit {
   constructor(private fb: FormBuilder, private loading: LoaderService) {
     this.loadingService = loading;
   }
-
-  ngOnInit(): void {}
 
   reloadTasks(flag: boolean) {
     if (flag) {
